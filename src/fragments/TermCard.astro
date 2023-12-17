@@ -1,0 +1,49 @@
+---
+import TermCardFullPageContents from './TermCardFullPageContents.astro';
+import TermCardSummaryContents from './TermCardSummaryContents.astro';
+
+interface Props {
+	category: string,
+	term: string,
+	viewType: 'full-page' | 'summary',
+}
+
+const {
+	category,
+	term,
+	viewType,
+} = Astro.props;
+
+---
+
+<section style={{ viewTransitionName: term }} class:list={ viewType }>
+	{
+		(() => {
+				switch (viewType) {
+					case 'full-page':
+						return <TermCardFullPageContents category={ category } term={ term } />
+					case 'summary':
+						return <TermCardSummaryContents category={ category } term={ term } />
+					default:
+						return null;
+				}
+				}
+		)()
+	}
+</section>
+
+<style>
+	section {
+		display: block;
+		background-color: #fff;
+		padding: 1rem;
+		border-radius: 1.5rem;
+		margin-bottom: 1rem;
+		border: 1px solid gray;
+	}
+
+	section.full-page {
+		width: 100%;
+		height: 100%;
+	}
+</style>

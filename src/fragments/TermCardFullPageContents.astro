@@ -1,0 +1,41 @@
+---
+import CodeExample from '../components/CodeExample.astro';
+import importedTerms from '../terms.json';
+
+const terms: TermDefinitionList = importedTerms;
+
+interface Props {
+	category: string,
+	term: string,
+}
+
+const { 
+	category,
+	term,
+} = Astro.props;
+
+const {
+  fullname,
+  description,
+  demo,
+} = terms[category].terms[term];
+---
+
+<dfn>{ fullname }</dfn>
+{
+	demo !== null &&
+		<CodeExample code={ demo } />
+}
+<p style={{ viewTransitionName: `${ term }-p` }}>{ description }</p>
+
+<style>
+	p {
+		margin: 1rem 0 0 0;
+	}
+
+	dfn {
+		font-style: normal;
+		font-size: 1.5rem;
+		font-weight: bold;
+	}
+</style>

@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "fullname": "Meta content",
+    "terms": {
+      "profs-law-of-performance": {
+        "fullname": "Prof's Law of Performance",
+        "description": "Send less data, less often, from nearby, only when necessary.",
+        "demo": null
+      }
+    }
+  },
+  "html": {
+    "fullname": "HTML",
+    "terms": {
+      "doctype": {
+        "fullname": "doctype",
+        "description": "Configure document type",
+        "demo": "<!doctype html>"
+      }
+    }
+  },
+  "css": {
+    "fullname": "CSS",
+    "terms": {
+      "display-flex": {
+        "fullname": "display: flex",
+        "description": "Create advanced CSS page layouts",
+        "demo": "wrapper {\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n}"
+      }
+    }
+  },
+  "javascript": {
+    "fullname": "JavaScript",
+    "terms": {
+      "local-storage": {
+        "fullname": "localStorage API",
+        "description": "Store data locally and persistently across sessions in the user's browser.",
+        "demo": "// set an item with localStorage API\nwindow.localStorage.setItem('key', 'value');\n\n// get an item with localStorage API\nwindow.localStorage.getItem('key');\n\n// make sure to encode your content with JSON.stringify() and JSON.parse()\nwindow.localStorage.setItem('key', JSON.stringify(myObject));\nJSON.parse(window.localStorage.getItem('key'));"
+      },
+      "other-api": {
+        "fullname": "Example API",
+        "description": "This is another example",
+        "demo": "test code"
+      }
+    }
+  }
+}

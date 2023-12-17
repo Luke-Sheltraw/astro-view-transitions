@@ -1,0 +1,54 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TermCard from '../../fragments/TermCard.astro';
+import importedTerms from '../../terms.json';
+
+const terms: TermDefinitionList = importedTerms;
+
+---
+
+<Layout title="Definitions">
+	<ul>
+		{
+			Object.entries(terms).map(([categoryName, categoryContents]) =>
+				<li>
+					<a href={`/terms/${ categoryName }`}>
+						<h2 style={{ viewTransitionName: categoryName }}>{ categoryContents.fullname }</h2>
+					</a>
+					<ul class="category-list">
+						{
+							Object.keys(categoryContents.terms).map((term) =>
+								<li>
+									<a href={`/terms/${ categoryName }/${ term }`}>
+									<TermCard category={ categoryName } term={ term } viewType="summary" />
+									</a>
+								</li>
+							)
+						}
+					</ul>
+				</li>
+			)
+		}
+	</ul>
+</Layout>
+
+<style>
+	ul {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	ul.category-list {
+		margin-bottom: 1.5rem;
+	}
+
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	h2 {
+		margin-bottom: 0.5rem;
+	}
+</style>

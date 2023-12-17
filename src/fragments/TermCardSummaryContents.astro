@@ -1,0 +1,34 @@
+---
+import importedTerms from '../terms.json';
+
+const terms: TermDefinitionList = importedTerms;
+
+interface Props {
+	category: string,
+	term: string,
+}
+
+const { 
+	category,
+	term,
+} = Astro.props;
+
+const {
+  fullname,
+  description,
+} = terms[category].terms[term];
+---
+
+<dfn>{ fullname }</dfn>
+<p style={{ viewTransitionName: `${ term }-p` }}>{ description }</p>
+
+<style>
+	p {
+		margin: 1rem 0 0 0;
+	}
+
+	dfn {
+		font-style: normal;
+		font-weight: bold;
+	}
+</style>

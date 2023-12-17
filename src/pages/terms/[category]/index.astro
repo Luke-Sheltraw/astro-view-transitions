@@ -1,0 +1,53 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import TermCard from '../../../fragments/TermCard.astro';
+import importedTerms from '../../../terms.json';
+
+export const getStaticPaths = () => {
+  return Object.keys(importedTerms)
+    .map((categoryName) => (
+			{
+				params: { 
+					category: categoryName,
+				}
+			}
+		));
+};
+
+const { category } = Astro.params;
+
+const terms: TermDefinitionList = importedTerms;
+
+---
+
+<Layout title="Definitions">
+	<h2 style={{ viewTransitionName: category }}>{ terms[category].fullname }</h2>
+	<ul>
+		{
+			Object.keys(terms[category].terms).map((term) =>
+				<li>
+					<a href={`/terms/${ category }/${ term }`}>
+						<TermCard category={ category } term={ term } viewType="summary" />
+					</a>
+				</li>
+			)
+		}
+	</ul>
+</Layout>
+
+<style>
+	ul {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	h2 {
+		margin-bottom: 0.5rem;
+	}
+</style>
