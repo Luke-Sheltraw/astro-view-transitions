@@ -20,7 +20,7 @@ const terms: TermDefinitionList = importedTerms;
 
 ---
 
-<Layout title="Definitions">
+<Layout title={ `${ terms[category].fullname } Terms` }>
 	<h2 style={{ viewTransitionName: category }}>{ terms[category].fullname }</h2>
 	<ul>
 		{
