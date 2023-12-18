@@ -16,15 +16,20 @@ export const getStaticPaths = () => {
 
 const { category } = Astro.params;
 
-const terms: TermDefinitionList = importedTerms;
+const {
+	fullname,
+	description,
+	terms,
+} = (importedTerms as TermDefinitionList)[category];
 
 ---
 
-<Layout title={ `${ terms[category].fullname } Terms` }>
-	<h2 style={{ viewTransitionName: category }}>{ terms[category].fullname }</h2>
+<Layout title={ `${ fullname } Terms` }>
+	<h2 style={{ viewTransitionName: category }}>{ fullname }</h2>
+	<p>{ description }</p>
 	<ul>
 		{
-			Object.keys(terms[category].terms).map((term) =>
+			Object.keys(terms).map((term) =>
 				<li>
 					<a href={`/terms/${ category }/${ term }`}>
 						<TermCard category={ category } term={ term } viewType="summary" />

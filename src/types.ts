@@ -1,6 +1,7 @@
 type TermDefinitionList = {
   [category: string]: {
     fullname: string,
+    description: string,
     terms: TermDefinitionCategoryList,
   },
 }

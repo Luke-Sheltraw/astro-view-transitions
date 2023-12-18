@@ -1,6 +1,7 @@
 {
   "meta": {
     "fullname": "Meta content",
+    "description": "There is more to web development than just syntax; we must understand the nuances of how the internet works, user experience, and development practices.",
     "terms": {
       "profs-law-of-performance": {
         "fullname": "Prof's Law of Performance",
@@ -11,6 +12,7 @@
   },
   "html": {
     "fullname": "HTML",
+    "description": "HTML, or HyperText Markup Language is a markup language describing the physical structure of a site. In the analogy of spoken language, HTML corresponds to nouns.",
     "terms": {
       "doctype": {
         "fullname": "doctype",
@@ -21,6 +23,7 @@
   },
   "css": {
     "fullname": "CSS",
+    "description": "CSS, or Cascading Style Sheets, allows us to visually style our sites. In the analogy of spoken language, CSS corresponds to adjectives.",
     "terms": {
       "display-flex": {
         "fullname": "display: flex",
@@ -31,6 +34,7 @@
   },
   "javascript": {
     "fullname": "JavaScript",
+    "description": "JS, or JavaScript, is a scripting language that allows us to add robust interaction to our sites. In the analogy of spoken language, JavaScript corresponds to verbs.",
     "terms": {
       "local-storage": {
         "fullname": "localStorage API",
