@@ -1,11 +1,21 @@
 {
   "meta": {
-    "fullname": "Meta content",
+    "fullname": "Meta Content",
     "description": "There is more to web development than just syntax; we must understand the nuances of how the internet works, user experience design, and best development practices.",
     "terms": {
       "profs-law-of-performance": {
         "fullname": "Prof's Law of Performance",
         "description": "Send less data, less often, from nearby, only when necessary.",
+        "demo": null
+      },
+      "five-pillars": {
+        "fullname": "The Five Pillar Model",
+        "description": "The five pillars are purpose, structure, execution, distribution, and form.",
+        "demo": null
+      },
+      "localhost-effect": {
+        "fullname": "Localhost Effect",
+        "description": "The tendancy of developers to forget that users will not experience their product as they experience it during development, often with regards to network speed and/or compute power.",
         "demo": null
       }
     }
